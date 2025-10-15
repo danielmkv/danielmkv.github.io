@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  li {
+    list-style-position: inside;
+ }
+ ul { 
+  margin: .35em;
+ }
+  
+  body {
+    padding: 2rem;
+    padding-top: 0px; 
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas:
+      ". header ."
+      ". main ."
+      ". footer .";
+    grid-template-columns: 1fr minmax(300px, 800px) 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  header {
+    grid-area: header;
+    text-align: center;
+    background-color:rgba(68, 174, 116, 0.333);
+    margin: 0px;
+    border-radius: 0px 0px 10px 10px;
+  }
+  
+  main {
+    grid-area: main;
+  }
+  
+  footer {
+    grid-area: footer;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 1.75em;
+  }
+  
+  .project {
+    margin-top: 2rem;
+  }
+
+  h1, h2 { 
+    text-align:center;
+    
+  }
+  
+  section { 
+    padding: 10px;
+  }
+
+  .experience, .experiences, .project, .contact { 
+    text-align: center;
+  }
+
+  #rsd-logo { 
+    width: 15%;
+  }
+/* 
+  .title { 
+    padding: 10%;
+  } */
+   .bgd-section {
+    display: inline-block;
+    margin: 0.25em;
+    background-color: rgb(98, 98, 167,.5);
+    border-radius: 10px;
+    padding: 0.2em 0.5em;
+   }
