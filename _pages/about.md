@@ -44,3 +44,8 @@ Currently a TA for CSE 197Y, a workshop class for UW's intro programming series:
 I was an intern for my school district for two years. During that time, I:
 
 - Supported HelpDesk field technicians in resolving tickets for faculty, staff, and students.
+- Maintained and repaired Chromebooks and other school devices across 21 district schools.
+- Created and maintained Excel and Google Sheets tools to track shipments and ensure accurate inventory.
+- Led district-wide technology audits, updating asset databases for thousands of devices.
+- Trained new interns and collaborated across teams to streamline onboarding.
+- Assisted in cybersecurity incident response, including multi-factor authentication rollout and emergency protocols.
