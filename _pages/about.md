@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Computer Science Student at the University of Washington
+subtitle: Computer Science Student at the University of Washington 
 
 profile:
   align: right
