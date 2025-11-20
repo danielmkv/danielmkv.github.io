@@ -1,7 +1,7 @@
 ---
 layout: page
 title: snap-select
-description: An open-source AI powered screenshot tool
+description: 
 importance: 1
 category: work
 ---
@@ -12,4 +12,4 @@ Written in Electron with JavaScript.
 
 **Timeline:** August 2025 - Present
 
-**Technologies:** Electron, JavaScript, ONNX Runtime, OCR, AI/ML
+**Technologies:** Electron, JavaScript, OCR, AI/ML
