@@ -9,9 +9,9 @@ profile:
   image: me.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Paul G. Allen School of</p>
-    <p>Computer Science & Engineering</p>
-    <p>University of Washington</p>
+    # <p>Paul G. Allen School of</p>
+    # <p>Computer Science & Engineering</p>
+    # <p>University of Washington</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
