@@ -6,7 +6,7 @@ importance: 1
 category: work
 ---
 
-An open-source AI powered screenshot tool. This tool takes screenshots, runs them through OCR models in the ONNX runtime to take text straight from your screen and into your clipboard!
+An [open-source](https://github.com/danielmkv/snap-select-elct) AI powered screenshot tool. This tool takes screenshots, runs them through an OCR model to take text straight from your screen and into your clipboard!
 
 Written in Electron with JavaScript.
 
