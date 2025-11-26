@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Roblox Game Development
-description: How I first got into programming
+title: roblox game development
+description: 
 importance: 3
-category: fun
+category: all
 ---
 
 How I first got into programming! I've made games on-and-off for the past ~11 years.

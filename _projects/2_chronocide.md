@@ -1,9 +1,9 @@
 ---
 layout: page
 title: chronocide
-description: Multiplayer PVP game for UW Tri-Campus Game Jam 2025
+description: multiplayer PVP game, UW Tri-Campus Game Jam 2025
 importance: 2
-category: work
+category: all
 ---
 
 Submission in UW's [Tri-City campus game jam](https://itch.io/jam/uw-tri-campus-game-jam-2025). Helped create a multiplayer PVP game in the span of one week.
