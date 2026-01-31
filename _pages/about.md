@@ -28,21 +28,21 @@ Hi there! My name is Daniel M. Shaffer. I'm a 2nd year student at the [Paul G. A
 
 ## Work Experience
 
-### TA: Paul G. Allen School (August 2025 - Present)
+### Research Assistant: Interactive Data Lab (December 2025 - Present)
+- Designing improvements to LLM-powered workflow for analyzing academic texts
+- Conducting codebase analysis and HCI literature review to inform feature development
+- Developing and prototyping AI-driven features using LangChain and LLMs to support interactive systems
+- Assisting in designing and evaluation with data-driven tasks
+- Collaborating with graduate researchers to iterate on research prototypes and experimental setups
 
-Currently a TA for CSE 197Y, a workshop class for UW's intro programming series:
+### Teaching Assistant: Paul G. Allen School of Computer Science and Engineering (September 2025 - Present)
+- Assisting students in CSE 197Y, a workshop class for UW's introductory programming series
+- Leading one-on-one tutoring focused on problem solving and programming fundamentals
+- Reviewing and refining weekly course materials for clarity and consistency, developed JUnit test cases
+- Collaborating with instructors and TAs to track student progress and improve teaching strategies
 
-- Review and refine weekly course materials to ensure clarity, accuracy, and consistency across sessions.
-- One-on-one tutoring sessions with students focused on active problem solving and programming fundamentals.
-- Collaborated with instructors and fellow TAs in weekly meetings to discuss student progress and improve teaching approaches.
-
-### Intern: Richland School District IT (June 2022 - July 2024)
-
-I was an intern for my school district for two years. During that time, I:
-
-- Supported HelpDesk field technicians in resolving tickets for faculty, staff, and students.
-- Maintained and repaired Chromebooks and other school devices across 21 district schools.
-- Created and maintained Excel and Google Sheets tools to track shipments and ensure accurate inventory.
-- Led district-wide technology audits, updating asset databases for thousands of devices.
-- Trained new interns and collaborated across teams to streamline onboarding.
-- Assisted in cybersecurity incident response, including multi-factor authentication rollout and emergency protocols.
+### IT Technician Intern:  Information Technology Department, Richland School District (June 2022 - July 2024)
+- Resolved HelpDesk tickets for faculty, staff, and students across 21 district schools
+- Maintained and repaired over 6,000 Chromebooks and other devices at scale
+- Updated and refined internal Excel and Google Sheets tools to track inventory and shipments
+- Assisted with district-wide technology audits and cybersecurity incident response
