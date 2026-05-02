@@ -24,7 +24,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi there! My name is Daniel M. Shaffer. I'm a 2nd year student at the [Paul G. Allen School of Computer Science and Engineering.](https://www.cs.washington.edu/)
+Hi there! My name is Daniel M. Shaffer. I'm an undergraduate student at the [Paul G. Allen School of Computer Science and Engineering.](https://www.cs.washington.edu/)
 
 ## Work Experience
 
