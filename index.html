@@ -1,1 +1,88 @@
-hi there lol
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daniel Mitroshkov — computer science undergraduate at the University of Washington, exploring human–AI interaction.">
+  <meta name="theme-color" content="#3a6261">
+  <title>Daniel Mitroshkov</title>
+  <link rel="icon" href="assets/folder.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="sound.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <!-- The room is artwork; everything inside the screen is real, selectable HTML. -->
+  <div class="room">
+    <div class="screen">
+      <div class="workspace">
+        <nav class="folders" aria-label="Portfolio">
+          <a href="#about" aria-current="page"><img src="assets/folder.svg" alt="">About me</a>
+          <a href="#research"><img src="assets/folder.svg" alt="">Research</a>
+          <a href="#resume"><img src="assets/folder.svg" alt="">Resume</a>
+          <a href="#contact"><img src="assets/folder.svg" alt="">Contact</a>
+        </nav>
+        <main id="content" class="window" tabindex="-1">
+          <div class="titlebar">
+            <span id="window-title">About me</span>
+            <button class="close-button enhanced-only" type="button" aria-label="Close window and return to About me" hidden>×</button>
+          </div>
+          <div class="window-body">
+            <section id="about" aria-labelledby="about-heading">
+              <h1 id="about-heading" tabindex="-1">Daniel Mitroshkov</h1>
+              <p>Hello there! I’m an undergraduate at the University of Washington, exploring human AI interaction.</p>
+              <p>I work on ongoing projects with UW’s <a href="https://idl.uw.edu/" target="_blank" rel="noopener noreferrer">Interactive Data Lab</a>.</p>
+              <a class="text-link" href="#research">Research <span aria-hidden="true">↗</span></a>
+            </section>
+            <section id="research" aria-labelledby="research-heading">
+              <h2 id="research-heading" tabindex="-1">Research</h2>
+              <p>I’m interested in human–AI interaction: how people use, understand, and work with AI systems. How can we make these systems more helpful? What makes working with them feel intuitive, and where do things get confusing?</p>
+              <p>I’m also interested in the opposite question; how humans can help improve AI models, whether that’s through RLHF or other methods! There’s a lot we can learn in both directions :)</p>
+              <p>I work with UW’s <a href="https://idl.uw.edu/" target="_blank" rel="noopener noreferrer">Interactive Data Lab</a>. My work will go here once it is public. Meanwhile, here are some of my personal projects:</p>
+              <h3>Selected projects</h3>
+              <h3>contraiλ</h3>
+              <p>AWS Hacks · May 2026</p>
+              <p>Built an event-driven forecasting pipeline across five AWS services in under 24 hours, using real-time NOAA GFS weather data to predict contrail-favorable airspace. Atmospheric scoring produces roughly 1,000 polygons across five intensity tiers every six hours, with around 20-second inference and operating costs below $1 per day.</p>
+              <h3>Empathetic Help-Seeking System</h3>
+              <p>Human/AI Interaction · April 2026–Present</p>
+              <p>Building an LLM-powered prototype that rewrites peer responses to reduce shame in online help-seeking, testing 15+ strategies across three models. Designed a 20-participant study to measure perceived empathy and willingness to seek help, with consent and recruitment procedures grounded in 10+ HCI papers.</p>
+              <h3>Imaginarium</h3>
+              <p>DubHacks · October 2025</p>
+              <p>Built a real-time, context-aware AI story-generation system in under 24 hours, with authentication, data persistence, and payment integration.</p>
+              <h3>Snap Select</h3>
+              <p>August 2025–Present</p>
+              <p>Developed a screenshot text-extraction tool with clipboard integration, roughly 30 ms end-to-end processing, and 94% accuracy across images of varying quality.</p>
+            </section>
+            <section id="resume" aria-labelledby="resume-heading">
+              <h2 id="resume-heading" tabindex="-1">Resume</h2>
+              <p><a href="assets/daniel-mitroshkov-resume.pdf" target="_blank" rel="noopener noreferrer">View in new tab ↗</a></p>
+              <p><a href="assets/daniel-mitroshkov-resume.pdf" download="Daniel-Mitroshkov-Resume.pdf">Download resume (PDF)</a></p>
+            </section>
+            <section id="contact" aria-labelledby="contact-heading">
+              <h2 id="contact-heading" tabindex="-1">Contact</h2>
+              <p>Feel free to email me :)</p>
+              <p><a href="mailto:dmkov15@cs.washington.edu">dmkov15 at cs.washington.edu</a></p>
+            </section>
+          </div>
+        </main>
+      </div>
+      <footer class="taskbar">
+        <div class="desktop-controls enhanced-only">
+          <button id="reading-toggle" type="button" aria-pressed="false">Reading mode</button>
+          <button id="sound-toggle" type="button" aria-label="Sound" aria-pressed="true">Sound on</button>
+        </div>
+      </footer>
+    </div>
+    <!-- Separate layers let the fish move while the room stays perfectly still. -->
+    <aside class="aquarium" aria-label="A little desktop aquarium">
+      <div class="tank-interior" aria-hidden="true"></div>
+      <div class="water" aria-hidden="true">
+        <div class="fish-film film-front"></div>
+      </div>
+      <button id="light-toggle" class="power-button enhanced-only" type="button" aria-label="Aquarium power" aria-pressed="true"><span aria-hidden="true">I<br>O</span></button>
+    </aside>
+  </div>
+</body>
+</html>

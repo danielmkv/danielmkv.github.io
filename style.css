@@ -1,0 +1,188 @@
+/* Foundations: warm paper, teal paint, and the simplest possible system fonts. */
+:root {
+  color-scheme: light;
+  --ink: #252b27;
+  --paper: #f1ead5;
+  --teal: #244f53;
+  --edge: #4a4b43;
+  font-family: Verdana, Geneva, sans-serif;
+  color: var(--ink);
+  background: #444b38;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; cursor: pointer; }
+a { color: #24575a; text-underline-offset: .2em; }
+a:hover { text-decoration-thickness: 2px; }
+button, .window { border: 2px solid var(--edge); }
+button { background: #c6c5b7; box-shadow: inset 1px 1px #faf3dc, inset -1px -1px #76786d; }
+button:hover { background: #e0deca; }
+button:active, button[aria-pressed="true"] { box-shadow: inset 2px 2px #73776a; }
+:focus-visible { outline: 3px solid #b65b18; outline-offset: 4px; }
+[hidden] { display: none !important; }
+.enhanced-only { display: none; }
+.enhanced .enhanced-only { display: flex; }
+.skip-link { position: fixed; top: -80px; left: 16px; z-index: 10; background: var(--paper); padding: 16px; }
+.skip-link:focus { top: 16px; }
+
+/* One background plate provides all the low-poly geometry and baked lighting. */
+.room {
+  position: relative;
+  width: min(100%, 1800px);
+  margin: 0 auto;
+  aspect-ratio: 1586 / 992;
+  background: url("assets/room.jpg") center / 100% 100% no-repeat;
+}
+.screen {
+  position: absolute;
+  left: 13.9975%; top: 12.0968%; width: 53.594%; height: 55.4435%;
+  transform-origin: top left;
+  transform: var(--screen-perspective);
+  display: flex; flex-direction: column;
+  padding: .45% .45% 0;
+  font-size: clamp(14px, 1.16vw, 20px);
+}
+.workspace { display: flex; flex: 1; min-height: 0; gap: 2%; }
+.folders {
+  order: 2; width: 16%; flex-shrink: 0;
+  display: flex; flex-direction: column; justify-content: space-around;
+  gap: 3px; padding-bottom: 8px;
+}
+.folders a {
+  color: #fff9df; text-decoration: none; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 2px; font: .85em monospace; border: 1px solid transparent;
+}
+.folders img { width: clamp(24px, 2.5vw, 40px); height: auto; image-rendering: pixelated; }
+.folders a:hover, .folders a[aria-current] { background: #103c4a80; border: 1px dotted #eee7cc; }
+.folders a:focus-visible { outline-color: #ffdb7f; outline-offset: 0; }
+
+/* A normal document region, not a modal: there is deliberately no focus trap. */
+.window {
+  flex: 1; min-width: 0; display: flex; flex-direction: column;
+  background: var(--paper); box-shadow: 3px 4px 0 #123b3e80, inset 1px 1px #fff9e3;
+  margin: 0 0 8px;
+}
+.titlebar {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 40px; padding: 3px 5px 3px 12px;
+  color: #fff9e3; background: var(--teal);
+  border: 2px solid #d3d0ba; font-family: monospace;
+}
+.close-button { color: var(--ink); width: 34px; min-height: 32px; align-items: center; justify-content: center; font-size: 24px; line-height: 1; }
+.window-body { overflow: auto; overscroll-behavior: contain; padding: clamp(18px, 2.3vw, 36px); scrollbar-color: #8b9585 #dedbc7; }
+.window section { line-height: 1.65; }
+.window section + section { border-top: 1px solid #a5a58e; margin-top: 2em; padding-top: 2em; }
+.enhanced:not(.reading) .window section { border: 0; margin: 0; padding: 0; }
+h1, h2 { font-size: clamp(23px, 2.35vw, 39px); line-height: 1.18; letter-spacing: -.055em; margin: 0 0 .7em; }
+h3 { font-size: 1em; margin: 1.5em 0 .3em; }
+p { margin: 0 0 1em; }
+.text-link { display: inline-block; margin-top: .25em; font-weight: bold; font-size: .85em; }
+.note { background: #e3dfc8; padding: 1em; border-left: 3px solid #7e8d6a; margin-top: 1.5em; font-size: .9em; }
+.note p { margin: .5em 0 0; }
+.taskbar {
+  flex-shrink: 0; display: flex; justify-content: space-between; align-items: center;
+  gap: 8px; margin: 0 -1.2% 0; padding: 4px;
+  background: #babcae; border-top: 2px solid #e9e7ce; font: .75em monospace;
+}
+.desktop-controls { gap: 5px; }
+.taskbar button { min-height: 36px; padding: 5px 9px; }
+
+/* Only the front of the circulating film is visible; the return passes behind an opaque backing.
+   A clipped copy of the room darkens the actual glass, never a floating rectangle. */
+.aquarium {
+  position: absolute; left: 76.1%; top: 51.3%; width: 21.2%; height: 33.4%;
+  --tank-crop: url("assets/room.jpg") 96.57% 77.03% / 471.7% 299.4%;
+  --glass: polygon(4% 22%, 86% 27%, 96% 24%, 96% 71%, 87% 77%, 4% 65%);
+}
+.tank-interior {
+  position: absolute; inset: 0; background: var(--tank-crop);
+  clip-path: var(--glass); filter: brightness(1.12) saturate(1.12);
+  transition: filter .25s;
+}
+.water {
+  position: absolute; inset: 0; overflow: hidden; clip-path: var(--glass);
+  filter: brightness(1.08); transition: filter .25s;
+  /* The printed film disappears into the curved, shaded ends of the casing. */
+  mask-image: linear-gradient(to right, transparent 2%, #000 10%, #000 82%, #0008 92%, transparent 97%);
+}
+/* Both ends of the strip are identical, so a complete revolution has no jump. */
+.fish-film {
+  position: absolute; left: 0; top: 25%; width: 200%; height: 46%;
+  background: url("assets/fish-film.svg") repeat-x left center / 50% 100%;
+  image-rendering: pixelated;
+  animation: film-revolution 32s linear infinite;
+}
+.film-front { animation-delay: -9s; }
+.aquarium.is-dark .tank-interior { filter: brightness(.22) saturate(.55); }
+.aquarium.is-dark .water { filter: brightness(.22) saturate(.55); }
+.aquarium.is-dark .fish-film, .paused .fish-film { animation-play-state: paused; }
+.power-button {
+  position: absolute; left: 63%; top: 77%; width: 18%; height: 20%; min-width: 44px; min-height: 44px;
+  background: transparent; border: 0; box-shadow: none; color: #ebe6d2;
+  align-items: center; justify-content: center;
+}
+.power-button span { display: block; background: #272c26; border: 2px outset #77796d; padding: 2px 6px; font: 10px/1.1 monospace; transform: skewY(7deg); }
+.power-button:hover { background: transparent; }
+.power-button[aria-pressed="true"] { box-shadow: none; }
+.power-button[aria-pressed="false"] span { border-style: inset; color: #a7aa98; }
+@keyframes film-revolution { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  body:not(.motion-allowed) .fish-film { animation-play-state: paused; }
+  .tank-interior, .water { transition: none; }
+}
+
+/* Reading mode and the no-JS fallback show every section in ordinary page flow. */
+body.reading .room, body:not(.enhanced) .room { aspect-ratio: auto; background: none; max-width: 900px; padding: 32px 24px; }
+body.reading .screen, body:not(.enhanced) .screen { transform: none; position: static; width: 100%; height: auto; padding: 0; font-size: 17px; }
+body.reading .workspace, body:not(.enhanced) .workspace { flex-direction: column; }
+body.reading .folders, body:not(.enhanced) .folders { order: 0; flex-direction: row; width: 100%; flex-wrap: wrap; }
+body.reading .folders a, body:not(.enhanced) .folders a { min-width: 90px; }
+body.reading .window-body, body:not(.enhanced) .window-body { overflow: visible; }
+body.reading .aquarium, body:not(.enhanced) .aquarium { display: none; }
+body.reading .close-button { display: none; }
+
+/* Small screens get full-size text, not a scaled-down picture of a monitor. */
+@media (max-width: 1000px) {
+  .room { aspect-ratio: auto; background: none; padding: 20px 16px 0; max-width: 720px; }
+  .screen { transform: none; position: static; width: 100%; height: auto; padding: 0; font-size: 16px; }
+  .workspace { flex-direction: column; gap: 16px; }
+  .folders { order: 0; flex-direction: row; width: 100%; gap: 4px; }
+  .folders a { flex: 1; min-width: 0; font-size: 12px; gap: 8px; padding: 10px 0; }
+  .folders img { width: 32px; }
+  .window { margin: 0; min-height: 340px; }
+  .window-body { overflow: visible; padding: 25px 22px; }
+  h1, h2 { font-size: 30px; }
+  .titlebar { min-height: 48px; }
+  .close-button { min-width: 44px; min-height: 40px; }
+  .taskbar { margin: 10px 0 0; padding: 5px; }
+  .taskbar button { min-height: 44px; }
+  .aquarium {
+    position: relative; left: auto; top: auto;
+    width: 285px; height: 282px; margin: 30px auto 0;
+    background: var(--tank-crop);
+    /* Trace the lid, recessed glass, and base separately to exclude the desk. */
+    clip-path: polygon(
+      2% 12%, 10% 2.5%, 22% .5%, 93% 3.5%, 99.5% 13.5%,
+      99.5% 22.5%, 96.5% 25%, 96.5% 68%, 98.5% 70%,
+      98.5% 88%, 84% 97%, 4% 84%, 1.5% 82%, 1.5% 64%,
+      4% 62.5%, 4% 21%, 2% 20%
+    );
+  }
+}
+@media (max-width: 360px) {
+  .room { padding-inline: 10px; }
+  .folders a { font-size: 11px; }
+  h1, h2 { font-size: 27px; }
+  .window-body { padding: 20px 16px; }
+}
+@media print {
+  :root { background: white; color: black; }
+  .room { background: none !important; aspect-ratio: auto; }
+  .screen { transform: none; position: static; width: 100%; height: auto; }
+  .workspace, .window, .window-body { display: block; overflow: visible; }
+  .window { border: 0; box-shadow: none; background: white; }
+  .window section[hidden] { display: block !important; }
+  .folders, .titlebar, .taskbar, .aquarium, .skip-link { display: none !important; }
+}
